@@ -5,8 +5,10 @@ from .forms import car_form, review_form
 # Create your views here.
 
 def home(request):
-
-    return render(request, 'home.html')
+    car_count = car.objects.all().count()
+    review_count = review.objects.all().count()
+    context = {'car_count':car_count, 'review_count':review_count}
+    return render(request, 'home.html',context)
 
 def view_reviews(request):
     reviews = review.objects.all()
@@ -33,5 +35,3 @@ def add_review(request):
 
 def delete_review(request):
     return render(request, 'delete_review.html')
-
-

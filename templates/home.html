@@ -1,9 +1,155 @@
+{% include 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+	.card {
+		position: relative;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin-top: 1rem;
+		min-width: 350px;
+		margin-right: 5rem;
+		margin-bottom: 2rem;
+		word-wrap: break-word;
+		color: white;
+		background-color: #484f4f;
+		background-clip: border-box;
+		border: 1px solid rgba(0, 0, 0, 0.125);
 
+	}
+
+	.card-body {
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		min-height: 1px;
+		padding: 1.25rem;
+
+
+	}
+
+	.card-title {
+		font-size: 1rem;
+		margin-bottom: 0.75rem;
+	}
+	.card-header {
+		padding: 0.75rem 1rem;
+		margin-bottom: 0;
+		background-color: rgba(0, 0, 0, 0.03);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+		}
+
+
+	.row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-left: 2.5rem;
+		margin-right: -1.5rem;
+		margin-bottom: -0.5rem;
+		}
+
+	.col {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		max-width: 100%;
+	}
+
+  @media (min-width: 768px) {
+    .col-md {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+	.card-header {
+		padding: 0.75rem 1.25rem;
+		margin-bottom: 0;
+		background-color: rgba(0, 0, 0, 0.03);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	}
+	.card-title {
+		margin-bottom: 0.75rem;
+		font-size: large;
+	}
+	.card-body {
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		min-height: 1px;
+		padding: 1.25rem;
+	}
+}
+</style>
 </head>
 <body>
+
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3 orders-delivered">
+			  <div class="card-header">
+			  	<h5 class="card-title">Total Cars</h5>
+			  </div>
+			  <div class="card-body">
+			   	<h3 class="card-title">{{car_count}}</h3>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3 orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Reports</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{review_count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3 orders-delivered">
+			  <div class="card-header">
+			  	<h5 class="card-title">Add reviews</h5>
+			  </div>
+			  <div class="card-body">
+			   	<h3 class="card-title"><a href='/view_reviews'>View Reviews</a></h3>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3 orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Modify Review</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title"><a href='/delete_review'>delete review</a></h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<a href='/add_review'>add review</a>
 	<a href='/add_car'>add car</a>
 	<a href='/view_reviews'>view reviews</a>
 	<a href='/delete_review'>delete review</a>
 </body>
+</html>
+{% endblock content %}

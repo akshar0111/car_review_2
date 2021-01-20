@@ -1,0 +1,48 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    background-color:  rgb(245, 241, 241);
+}
+.nav {
+    margin: -0.5rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    background-color: #33232b;
+    min-width: 350px;
+}
+  
+.nav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+.nav a.active {
+    background-color: #dd32d5da;
+    color: white;
+}
+</style>
+</head>
+
+    <div class="nav">
+        <a class="active" href="/">Home</a>
+        <a href='/add_car'>Add car</a>
+        <a href="/view_reviews">View Reviews</a>
+    </div>
+
+</html>
+{% endblock content %}
