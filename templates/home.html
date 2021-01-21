@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 	<style>
+	a{
+		color: #cfe0e8;
+	}
 	.card {
 		position: relative;
 		display: -ms-flexbox;
@@ -46,7 +49,7 @@
 		}
 
 
-	.row {
+	.row1 {
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
@@ -60,7 +63,7 @@
 		-ms-flex-preferred-size: 0;
 		flex-basis: 0;
 		-ms-flex-positive: 1;
-		flex-grow: 1;
+		flex-grow1: 1;
 		max-width: 100%;
 	}
 
@@ -69,7 +72,7 @@
       -ms-flex-preferred-size: 0;
       flex-basis: 0;
       -ms-flex-positive: 1;
-      flex-grow: 1;
+      flex-grow1: 1;
       max-width: 100%;
     }
 	.card-header {
@@ -89,12 +92,15 @@
 		padding: 1.25rem;
 	}
 }
+.down{
+	background-color: #5587a8;
+}
 </style>
 </head>
 <body>
 
 
-<div class="row">
+<div class="row1">
 	<div class="col">
 		<div class="col-md">
 			<div class="card text-center text-white  mb-3 orders-delivered">
@@ -120,22 +126,22 @@
 		</div>
 	</div>
 </div>
-<div class="row">
+<div class="row1">
 	<div class="col">
 		<div class="col-md">
-			<div class="card text-center text-white  mb-3 orders-delivered">
+			<div class="card text-center text-white  mb-3 down">
 			  <div class="card-header">
 			  	<h5 class="card-title">Add reviews</h5>
 			  </div>
 			  <div class="card-body">
-			   	<h3 class="card-title"><a href='/view_reviews'>View Reviews</a></h3>
+			   	<h3 class="card-title"><a href='/add_review'>Add Reviews</a></h3>
 			  </div>
 			</div>
 		</div>
 	</div>
 	<div class="col">
 		<div class="col-md">
-			<div class="card text-center text-white  mb-3 orders-pending">
+			<div class="card text-center text-white down">
 			  	<div class="card-header">
 			  		<h5 class="card-title">Modify Review</h5>
 			  	</div>
@@ -146,10 +152,6 @@
 		</div>
 	</div>
 </div>
-	<a href='/add_review'>add review</a>
-	<a href='/add_car'>add car</a>
-	<a href='/view_reviews'>view reviews</a>
-	<a href='/delete_review'>delete review</a>
 </body>
 </html>
 {% endblock content %}
