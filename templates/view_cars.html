@@ -1,0 +1,60 @@
+{% include 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reviews</title>
+    <style>
+        table {
+        border-collapse: collapse;
+        width: 90%;
+        margin-left: 3rem;
+        margin-top: 2rem;
+        font-size: 20px;
+        font-family: monospace;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 8px;
+        background-color: rgba(148, 129, 129, 0.658);
+
+        }
+        td{
+          border: 1px solid rgba(148, 129, 129, 0.658);
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+        background-color: #2f3830;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Car name</th>
+    <th>Company</th>
+    <th>Cost</th>
+    <th>Ratings</th>
+    <th>Reviews</th>
+  </tr>
+{% for car in cars %}
+  <tr>
+    <td>{{car.name}}</td>
+    <td>{{car.company}}</td>
+    <td>{{car.cost}}</td>
+    <td></td>
+    <td><a href="{% url 'review' car.c_id %}">view reviews</a></td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock content %}

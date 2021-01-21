@@ -10,11 +10,13 @@ def home(request):
     context = {'car_count':car_count, 'review_count':review_count}
     return render(request, 'home.html',context)
 
-def view_reviews(request):
-    reviews = review.objects.all()
-    print(reviews)
-    return render(request, 'view_reviews.html',{'reviews':reviews})
+def view_cars(request):
+    cars = car.objects.all()
+    return render(request, 'view_cars.html',{'cars':cars})
 
+def view_reviews(request, pk):
+
+    return render(request, 'view_reviews.html')
 def add_car(request):
     form = car_form()
     if request.method == 'POST':

@@ -19,8 +19,9 @@ from main_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
-    path('add_car', views.add_car),
-    path('add_review', views.add_review),
-    path('delete_review', views.delete_review),
-    path('view_reviews',views.view_reviews),
+    path('add_car/', views.add_car),
+    path('add_review/', views.add_review),
+    path('delete_review/', views.delete_review),
+    path('view_cars/',views.view_cars),
+    path('view_cars/<str:pk>',views.view_reviews, name='review'),
     ]
