@@ -42,7 +42,6 @@
     <th>Car name</th>
     <th>Company</th>
     <th>Cost</th>
-    <th>Ratings</th>
     <th>Reviews</th>
   </tr>
 {% for car in cars %}
@@ -50,7 +49,6 @@
     <td>{{car.name}}</td>
     <td>{{car.company}}</td>
     <td>{{car.cost}}</td>
-    <td></td>
     <td><a href="{% url 'review' car.c_id %}">view reviews</a></td>
   </tr>
 {% endfor %}

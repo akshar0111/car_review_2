@@ -23,4 +23,6 @@ class review(models.Model):
     r_id = models.AutoField(primary_key=True)
     rating = models.CharField(max_length = 1, choices=rates, default='1') 
     description = models.CharField(max_length = 300)
-
+    
+    def __str__(self):
+        return self.rating
