@@ -21,7 +21,9 @@ urlpatterns = [
     path('', views.home),
     path('add_car/', views.add_car),
     path('add_review/', views.add_review),
-    path('delete_review/', views.delete_review),
+    path('<str:pk>/delete_review/', views.delete_review, name='delete'),
     path('view_cars/',views.view_cars),
+    path('<str:pk>/modify_review/',views.modify, name='modify'),
+    path('all_reviews/',views.all_reviews, name='all_reviews'),
     path('view_cars/<str:pk>',views.view_reviews, name='review'),
     ]

@@ -15,8 +15,14 @@ def view_cars(request):
     return render(request, 'view_cars.html',{'cars':cars})
 
 def view_reviews(request, pk):
+    car_ = car.objects.get(c_id=pk)
+    revs = review.objects.filter(car_model=car_)
+    return render(request, 'view_reviews.html', {'revs':revs})
 
-    return render(request, 'view_reviews.html')
+def all_reviews(request):
+    reviews = review.objects.all()
+    return render(request, 'view_reviews.html',{'revs':reviews})
+
 def add_car(request):
     form = car_form()
     if request.method == 'POST':
@@ -35,5 +41,19 @@ def add_review(request):
             return redirect('/')
     return render(request, 'add_review.html',{'form':form})
 
-def delete_review(request):
-    return render(request, 'delete_review.html')
+def modify(request, pk):
+    reviews = review.objects.get(r_id = pk)
+    c = reviews.car_model
+    form = review_form(instance=reviews)
+    if request.method =='POST':
+        form = review_form(request.POST, instance=reviews)
+        rform = form.save(commit=False)
+        rform.car_model = c
+        rform.save()
+        return redirect('/')
+    return render(request, 'add_review.html',{'form':form})
+    
+def delete_review(request, pk):
+    del_rev = review.objects.get(r_id=pk)
+    del_rev.delete()
+    return redirect('/')
